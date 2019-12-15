@@ -13,7 +13,7 @@ app.set("view engine", "handlebars");
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/newsScrapeDB", { useNewUrlParser: true });
 // Make public a static folder
 app.use(express.static("public"));
-const db = require("../models/Articles.js");
+const db = require("./models");
 
 require("./routes/api-routes.js")(app, db);
 

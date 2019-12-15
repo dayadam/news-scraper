@@ -21,7 +21,16 @@ module.exports = function(app, db) {
           .next()
           .children("p")
           .text();
-        results.push(result);
+        db.Articles.findOne({ link: result.link })
+          .populate("comments")
+          .then(function(answer) {
+            if (answer !== null) {
+              results.push(answer);
+            } else {
+              db.Articles.create(result);
+              results.push(result);
+            }
+          });
       });
       res.render("index", { articles: results });
     });
