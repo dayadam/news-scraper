@@ -16,11 +16,12 @@ module.exports = function(app, db) {
         result.link = $(this)
           .children("a")
           .attr("href");
-        result.snippet = $(this)
-          .parent()
-          .next()
-          .children("p")
-          .text();
+        result.snippet =
+          $(this)
+            .parent()
+            .next()
+            .children("p")
+            .text(); //|| "No snippet available";
         db.Articles.findOne({ link: result.link })
           .populate("comments")
           .then(function(answer) {
@@ -32,6 +33,7 @@ module.exports = function(app, db) {
             }
           });
       });
+      //db.Articles.updateMany({snippet: ""}, {snippet: "No snippet available"})
       res.render("index", { articles: results });
     });
   });
