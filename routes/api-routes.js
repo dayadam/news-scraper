@@ -16,12 +16,19 @@ module.exports = function(app) {
         const link = $(this)
           .children("a")
           .attr("href");
+        const snippet = $(this)
+          .parent()
+          .next()
+          .children("p")
+          .text();
         const result = {
           title: title,
-          link: link
+          link: link,
+          snippet: snippet
         };
         results.push(result);
       });
+      console.log(results)
       res.render("index", { articles: results });
     });
   });
