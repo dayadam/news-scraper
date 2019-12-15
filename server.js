@@ -11,7 +11,7 @@ app.use(express.json());
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 // Make public a static folder
-//app.use(express.static("public"));
+app.use(express.static("public"));
 
 // Connect to the Mongo DB
 mongoose.connect("mongodb://localhost/newsScrapeDB", { useNewUrlParser: true });

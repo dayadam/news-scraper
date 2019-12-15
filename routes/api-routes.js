@@ -5,7 +5,7 @@ const axios = require("axios");
 // Routes
 // =============================================================
 module.exports = function(app) {
-  app.get("/scrape", function(req, res) {
+  app.get("/", function(req, res) {
     axios.get("https://hypepotamus.com/").then(function(response) {
       const $ = cheerio.load(response.data);
       const results = [];
@@ -22,7 +22,7 @@ module.exports = function(app) {
         };
         results.push(result);
       });
-      res.json(results);
+      res.render("index", { articles: results });
     });
   });
 };
