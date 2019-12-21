@@ -6,6 +6,18 @@
     <div class="card-body">
         <p class="card-text">{{this.snippet}}</p>
     </div>
+    <div class="container comments">
+        {{#each comments}}
+        <div class="row">
+            <div class="col">
+                <h6>{{this.name}}</h6>
+            </div>
+            <div class="col">
+                <p>{{this.body}}</p>
+            </div>
+        </div>
+        {{/each}}
+    </div>
     <div class="container">
         <form>
             <div class="form-row">
