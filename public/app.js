@@ -35,14 +35,14 @@ document.addEventListener("DOMContentLoaded", function(event) {
         .parent()
         .parent()
         .children(".comments").append(`
-      <div class="row">
-        <div class="col">
-            <h6>${response.name}</h6>
-        </div>
-        <div class="col">
-            <p>${response.body}</p>
-        </div>
-      </div>`);
+          <div class="row">
+            <div class="col">
+                <h6>${response.name}</h6>
+            </div>
+            <div class="col">
+                <p>${response.body}</p>
+            </div>
+          </div>`);
     });
   });
 });

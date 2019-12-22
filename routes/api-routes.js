@@ -1,44 +1,6 @@
 const cheerio = require("cheerio");
 const axios = require("axios");
 
-/* function loop($, db) {
-  const results = [];
-  $(".entry-title").each(function(i, element) {
-    const result = {};
-    result.title = $(this)
-      .children("a")
-      .text();
-    result.link = $(this)
-      .children("a")
-      .attr("href");
-    result.snippet = $(this)
-      .parent()
-      .next()
-      .children("p")
-      .text(); //|| "No snippet available";
-    console.log(results);
-    db.Articles.findOne({ link: result.link })
-      .populate("comments")
-      .then(function(answer) {
-        if (answer !== null) {
-          results.push(answer);
-        } else {
-          db.Articles.create(result).then(function(dbres) {
-            results.push(result);
-          });
-        }
-      });
-  });
-  console.log(results);
-  return Promise.all(results);
-}
-
-async function cycle($, db, res) {
-  const results = await loop($, db);
-  console.log(results);
-  res.render("index", { articles: results, comments: results.comments });
-} */
-
 // Routes
 // =============================================================
 module.exports = function(app, db) {
