@@ -46,9 +46,7 @@ module.exports = function(app, db) {
     axios.get("https://hypepotamus.com/").then(function(response) {
       const $ = cheerio.load(response.data);
       const results = [];
-      let syncCount = 0;
       $(".entry-title").each(function(i, element) {
-        syncCount++;
         const result = {};
         result.title = $(this)
           .children("a")
@@ -60,20 +58,31 @@ module.exports = function(app, db) {
           .parent()
           .next()
           .children("p")
-          .text(); //|| "No snippet available";
-        db.Articles.findOne({ link: result.link })
-          .populate("comments")
-          .then(function(answer) {
-            if (answer !== null) {
-              results.push(answer);
-            } else {
-              db.Articles.create(result).then(function(dbres) {
-                results.push(result);
+          .text();
+        results.push(
+          new Promise(function(resolve, reject) {
+            db.Articles.findOne({ link: result.link })
+              .populate("comments")
+              .then(function(answer) {
+                if (answer !== null) {
+                  resolve(answer);
+                } else {
+                  db.Articles.create(result).then(function(dbres) {
+                    resolve(result);
+                  });
+                }
               });
-            }
-          });
+          })
+        );
       });
-      res.render("index", { articles: results, comments: results.comments });
+      async function call(results) {
+        const arr = await Promise.all(results);
+        res.render("index", {
+          articles: arr,
+          comments: arr.comments
+        });
+      }
+      call(results);
     });
   });
 
