@@ -1,5 +1,8 @@
-document.addEventListener("DOMContentLoaded", function(event) {
-  const cardText = document.getElementsByClassName("card-text");
+$(document).ready(function() {
+  //document.addEventListener("DOMContentLoaded", function(event) {
+  const cardText = $(".card-text");
+  //document.getElementsByClassName("card-text");
+  console.log(cardText);
   for (i = 0; i < cardText.length; i = i + 1) {
     if (!cardText[i].innerHTML) {
       cardText[i].parentNode.remove();
@@ -45,4 +48,5 @@ document.addEventListener("DOMContentLoaded", function(event) {
           </div>`);
     });
   });
+  //});
 });
