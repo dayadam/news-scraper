@@ -21,6 +21,9 @@ module.exports = function(app, db) {
           .next()
           .children("p")
           .text();
+        //creates new promise for each async func,
+        //pushs to array,
+        //and then awaits for all promises to resolve.
         results.push(
           new Promise(function(resolve, reject) {
             db.Articles.findOne({ link: result.link })
@@ -53,12 +56,13 @@ module.exports = function(app, db) {
       name: req.body.name,
       body: req.body.body
     }).then(function(response) {
-      db.Articles.updateOne( //this is model logic, not routes
+      db.Articles.updateOne(
+        //this is model logic, not routes
         { _id: req.body.article_id },
         { $push: { comments: response._id } }
       ).then(function(answer) {
         if (answer.ok === 1) {
-        res.json(response);
+          res.json(response);
         }
       });
     });
@@ -68,7 +72,8 @@ module.exports = function(app, db) {
     db.Comments.deleteOne({
       comment_id: req.body.comment_id
     }).then(function(response) {
-      db.Articles.updateOne( //this is model logic, not routes
+      db.Articles.updateOne(
+        //this is model logic, not routes
         { _id: req.body.article_id },
         { $pull: { comments: req.body.comment_id } }
       ).then(function(answer) {
