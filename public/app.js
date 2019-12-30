@@ -19,25 +19,24 @@ $(document).ready(function() {
       .children()
       .children(".body")
       .val();
-    const article = $(this)
+    const article_id = $(this)
       .parent()
       .parent()
       .parent()
       .children(".card-header")
       .children(".card-title")
-      .text();
+      .attr("data-id");
     $.ajax({
       url: "/comment",
       method: "POST",
-      data: { name: name, body: body, article: article }
+      data: { name: name, body: body, article_id: article_id } //should update with article id, not title
     }).then(function(response) {
-      //console.log($(`.card-title[text=${article}]`));
-      $(`.card-title[text=${article}]`)
-        .parent()
+      //checks if updated in api routes
+      $(`.card-title[data-id="${article_id}"]`)
         .parent()
         .parent()
         .children(".comments").append(`
-          <div class="row">
+          <div class="row" data-id="${response._id}">
             <div class="col">
                 <h6>${response.name}</h6>
             </div>
@@ -47,9 +46,11 @@ $(document).ready(function() {
             <div class="col">
               <button type="button" class="btn delete btn-danger">Delete</button>
             </div>
-          </div>`);
+          </div>
+          `);
     });
   });
+
   $(document).on("click", ".delete", function(event) {
     const comment_id = $(this)
       .parent()
@@ -63,17 +64,17 @@ $(document).ready(function() {
       .children(".card-header")
       .children(".card-title")
       .attr("data-id");
-    console.log(article_id);
-    $(this)
+    const clickedComment = $(this)
       .parent()
-      .parent()
-      .remove();
+      .parent();
     $.ajax({
       url: "/comment",
       method: "DELETE",
       data: { comment_id: comment_id, article_id: article_id }
     }).then(function(response) {
-      console.log(response);
+      if (response.ok === 1) {
+        clickedComment.remove();
+      }
     });
   });
   //});

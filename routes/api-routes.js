@@ -53,20 +53,22 @@ module.exports = function(app, db) {
       name: req.body.name,
       body: req.body.body
     }).then(function(response) {
-      db.Articles.updateOne(
-        { title: req.body.article },
+      db.Articles.updateOne( //this is model logic, not routes
+        { _id: req.body.article_id },
         { $push: { comments: response._id } }
       ).then(function(answer) {
+        if (answer.ok === 1) {
         res.json(response);
+        }
       });
     });
   });
-  
+
   app.delete("/comment", function(req, res) {
     db.Comments.deleteOne({
       comment_id: req.body.comment_id
     }).then(function(response) {
-      db.Articles.updateOne(
+      db.Articles.updateOne( //this is model logic, not routes
         { _id: req.body.article_id },
         { $pull: { comments: req.body.comment_id } }
       ).then(function(answer) {
