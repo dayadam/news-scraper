@@ -1,21 +1,23 @@
 {{#each articles}}
 <div class="card my-5">
     <div class="card-header">
-        <h4 class="card-title"><a href="{{this.link}}">{{this.title}}</a></h4>
+        <h4 class="card-title" data-id="{{this._id}}"><a href="{{this.link}}">{{this.title}}</a></h4>
     </div>
     <div class="card-body">
         <p class="card-text">{{this.snippet}}</p>
     </div>
     <div class="container comments">
         {{#each comments}}
-        <div class="row">
+        <div class="row" data-id="{{this._id}}">
             <div class="col">
                 <h6>{{this.name}}</h6>
             </div>
             <div class="col">
                 <p>{{this.body}}</p>
             </div>
-            <div class="col"><button type="button" class="btn btn-danger">Delete</button></div>
+            <div class="col">
+                <button type="button" class="btn delete btn-danger">Delete</button>
+            </div>
         </div>
         {{/each}}
     </div>
@@ -29,7 +31,7 @@
                     <input class="body" type="text" placeholder="comment" />
                 </div>
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn submit btn-primary">Submit</button>
         </form>
     </div>
 </div>

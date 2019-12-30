@@ -61,4 +61,17 @@ module.exports = function(app, db) {
       });
     });
   });
+  
+  app.delete("/comment", function(req, res) {
+    db.Comments.deleteOne({
+      comment_id: req.body.comment_id
+    }).then(function(response) {
+      db.Articles.updateOne(
+        { _id: req.body.article_id },
+        { $pull: { comments: req.body.comment_id } }
+      ).then(function(answer) {
+        res.json(response);
+      });
+    });
+  });
 };
