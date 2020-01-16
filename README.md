@@ -1,6 +1,6 @@
 # news-scraper
 
-This is a full stack application that allows users to update the inventory of items in a MySQL database. 
+This is a full stack application that scrapes article headlines and snippets from [Hypepotamus](https://hypepotamus.com/) and allows users to save and delete comments on the articles. 
 ---
 
 ## Table of Contents
