@@ -99,7 +99,7 @@ Node.js, MYSQL database, and express and sequelize packages are required to run 
 
 15. **NOTE**: No "b" at the end, simply `mongod`
 
-16. If mongod is still running, great job! Now go ahead and open a new instace of Git Bash, and enter the command: `mongo`. This will initialize the Mongo Shell and allow you to begin entering commands via the Mongo Shell. Congratulations, you’ve installed MongoDB. Your instructor will take it from here.
+16. If mongod is still running, great job! Now go ahead and open a new instace of Git Bash, and enter the command: `mongo`. This will initialize the Mongo Shell and allow you to begin entering commands via the Mongo Shell. Congratulations, you’ve installed MongoDB.
 
 17. If mongod didn’t run, and instead your bash threw a "command not found" error, make sure you added MongoDB’s bin directory to your PATH variable (see step B.3). Then, close out git bash and try running mongod again.
 
@@ -131,7 +131,7 @@ Node.js, MYSQL database, and express and sequelize packages are required to run 
 
 4. **NOTE**: No "b" at the end, simply `mongod`
 
-5. If mongod didn’t exit from your window, great job! You’ve installed MongoDB. Your instructor will take it from here.
+5. If mongod didn’t exit from your window, great job! You’ve installed MongoDB.
 
 6. If mongod starts but closes after a series of prompts, make sure you created the data/db directory in your root directory, MongoDB cannot run without this directory (see steps 4.1-4.2).
 
