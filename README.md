@@ -112,11 +112,12 @@ Users can enter the quantity they want to subtract from the database in each "Bu
 
 * [Node.js](https://nodejs.org/en/) - Server runtime environment for JavaScript
 * [Express.js](https://www.npmjs.com/package/express) - Fast, unopinionated, minimalist web framework for node.
-* [Sequelize](https://www.npmjs.com/package/sequelize) - Sequelize is a promise-based Node.js ORM for Postgres, MySQL, MariaDB, SQLite and Microsoft SQL Server. 
+* [Mongoose](https://www.npmjs.com/package/mongoose) - MongoDB object modeling tool designed to work in an asynchronous environment
 * [jQuery](https://jquery.com/) - Fast, small, and feature-rich JavaScript library
 * [Bootstrap](https://getbootstrap.com/) - CSS framework directed at responsive, mobile-first front-end web development
-* [MySQL](https://www.mysql.com/products/community/) - Open-source relational database 
-* [Blackrock Digital](https://github.com/BlackrockDigital/startbootstrap-shop-homepage) - Start Bootstrap - Shop Homepage
+* [MongoDB](https://www.mongodb.com/download-center/community) - General purpose, document-based, distributed database
+* [Axios](https://www.npmjs.com/package/axios) - Package used for server side http requests to APIs
+* [Express Handlebars](https://www.npmjs.com/package/express-handlebars) - A Handlebars view engine for Express
 
 ## Authors
 
@@ -125,5 +126,4 @@ Users can enter the quantity they want to subtract from the database in each "Bu
 ## Acknowledgments
 
 * Thanks to all the open source contributors that helped with the building blocks of this project. 
-
-* Thanks Blackrock Digital for providing an user interface template. 
+ 
