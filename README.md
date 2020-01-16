@@ -26,7 +26,7 @@ Node.js, MYSQL database, and express and sequelize packages are required to run 
 
 ### Clone
 
-- Clone this repo to your local machine using `https://github.com/dayadam/bamazon`
+- Clone this repo to your local machine using `https://github.com/dayadam/news-scraper`
 
 ---
 
@@ -152,8 +152,6 @@ $ npm install
 ```
 
 ## Usage
-
-[Working Video](https://drive.google.com/file/d/1VRxdemi2_74LE0EvOPcz6I31zcqxG0VO/view?usp=sharing)
 
 Users can enter the quantity they want to subtract from the database in each "Buy quantity:" input field. Clicking the "Place order" button will submit the order, subtract from the database, and update the new inventory quantity in the "Stock Quantity:" field. 
 
