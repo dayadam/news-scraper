@@ -143,6 +143,8 @@ Node.js, MYSQL database, and express and sequelize packages are required to run 
 
 _The commands in #2 create a directory with administrative privileges, make your account the owner of that directory (instead of the "root" account owning it), and add write permissions to that directory so the apps you write are able to update your database_
 
+- - - 
+
 ### Install Node and packages
 
 - install Node.js from <https://nodejs.org/en/>
