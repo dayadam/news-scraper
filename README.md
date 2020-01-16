@@ -105,8 +105,6 @@ Node.js, MYSQL database, and express and sequelize packages are required to run 
 
 18. If mongod starts but closes after a series of prompts, make sure you created the data/db directory in your root. MongoDB cannot run without this directory (see steps 2.1-2.2).
 
-19. If you’re still encountering issues starting mongod, please ask for assistance from one of the TAs or the instructor.
-
 - - -
 
 ### 3. Installing MongoDB on MacOS
@@ -136,8 +134,6 @@ Node.js, MYSQL database, and express and sequelize packages are required to run 
 5. If mongod didn’t exit from your window, great job! You’ve installed MongoDB. Your instructor will take it from here.
 
 6. If mongod starts but closes after a series of prompts, make sure you created the data/db directory in your root directory, MongoDB cannot run without this directory (see steps 4.1-4.2).
-
-7. If you’re still encountering issues starting mongod, please ask for assistance from one of the TAs or the instructor.
 
 8. If you do not want to use homebrew, you can alternatively follow these instructions: <https://docs.mongodb.com/v3.0/tutorial/install-mongodb-on-os-x/>. However, installing MongoDB without homebrew can be a bit of a headache. Installing homebrew on your mac will make your life as a web developer a ton easier.
 
