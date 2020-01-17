@@ -12,7 +12,7 @@ This is a full stack application that scrapes article headlines and snippets fro
 
 ## Organization of the Application
 
-The application uses Bootstrap for the user interface. When a user submits a purchase quantity of an item, an AJAX request is made to the server API which updated the MySQL database uses Sequelize as an ORM. Node and express comprise the backend. 
+The application uses Bootstrap for the user interface. Immediately upon launch, the application uses axios and cheerio to scrape the headlines, hyperlinks, and snippets (if available) from [Hypepotamus](https://hypepotamus.com/). The application then checks each of these against the database to see if they have been previously saved, and if so, display the previously saved version with any available comments. If the article has not been previously saved, the application will display the new article to the user. Views are server-side rendered with the help of handlebars. Express handles routing and mongoose models the data as an ODM for MongoDB. 
 
 ## Getting Started
 
@@ -22,7 +22,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-Node.js, MYSQL database, and express and sequelize packages are required to run this application locally.  
+Node.js, MongoDB, and express, cheerio, axios, mongoose, and express-handlebars packages are required to run this application locally.  
 
 ### Clone
 
@@ -165,6 +165,7 @@ Users can enter their name and comment in those respective fields on an article 
 * [MongoDB](https://www.mongodb.com/download-center/community) - General purpose, document-based, distributed database
 * [Axios](https://www.npmjs.com/package/axios) - Package used for server side http requests to APIs
 * [Express Handlebars](https://www.npmjs.com/package/express-handlebars) - A Handlebars view engine for Express
+* [Cheerio](https://www.npmjs.com/package/cheerio) - Fast, flexible & lean implementation of core jQuery designed specifically for the server.
 
 ## Authors
 
