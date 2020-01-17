@@ -153,7 +153,7 @@ $ npm install
 
 ## Usage
 
-Users can enter the quantity they want to subtract from the database in each "Buy quantity:" input field. Clicking the "Place order" button will submit the order, subtract from the database, and update the new inventory quantity in the "Stock Quantity:" field. 
+Users can enter their name and comment in those respective fields on an article and click the "Submit" button to save it to the database and display it. Clicking the "Delete" button besides an existing comment will remove it from the database and remove it from the user interface. The article headlines are hyperlinks to the Hypepotamus article itself.  
 
 ## Built With
 
