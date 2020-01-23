@@ -26,7 +26,7 @@ Node.js, MongoDB, and express, cheerio, axios, mongoose, and express-handlebars 
 
 ### Clone
 
-- Clone this repo to your local machine using `https://github.com/dayadam/news-scraper`
+- Clone this repo to your local machine using `https://github.com/dayadam/news-scraper.git`
 
 ---
 
